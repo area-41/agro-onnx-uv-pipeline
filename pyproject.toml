@@ -1,0 +1,33 @@
+[project]
+name = "agro-onnx-uv-pipeline"
+version = "0.1.0"
+description = "Pipeline MLOps de alta eficiência para indústria e agrotech utilizando uv e ONNX Runtime."
+readme = "README.md"
+authors = [
+    { name = "Área 41", email = "" }
+]
+requires-python = ">=3.12"
+
+dependencies = [
+    "numpy>=2.0.0",
+    "onnxruntime>=1.18.0",
+]
+
+[project.scripts]
+agro-onnx-uv-pipeline = "agro_onnx_uv_pipeline.main:main"
+
+[dependency-groups]
+dev = [
+    "torch>=2.2.0",
+    "torchvision>=0.17.0",
+    "onnx>=1.16.0",
+    "pytest>=8.0.0",
+]
+
+# INCLUA ESTA SEÇÃO:
+[tool.uv]
+default-groups = ["dev"]
+
+[build-system]
+requires = ["uv_build>=0.12.6,<0.13.0"]
+build-backend = "uv_build"
